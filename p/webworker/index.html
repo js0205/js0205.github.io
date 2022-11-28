@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='FirstPostFirstPostFirst PostFirst PostFirst PosFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst Post'>
-<title>First Post</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='概念 （1）通过使用Web Workers，Web应用程序可以在独立于主线程的后台线程中，运行一个脚本操作。这样做的好处是可以在独立线程中执行费时的处理任务，从而允许主线程（通常是UI线程）不会因此被阻塞/放慢
+使用注意点 Web Worker有以下几个使用注意点：
+（1）同源限制：分配给Worker线程运行的脚本文件，必须与主线程的脚本文件同源
+（2）DOM限制：Worker线程所在的全局对象，与主线程不一样，无法读取主线程所在网页的DOM对象，也无法使用document、window、parent这些对象。但是，Worker线程可以navigator对象和location对象
+（3）通信联系：Worker线程和主线程不在同一个上下文环境，它们不能直接通信，必须通过消息完成
+（4）脚本限制：Worker线程不能执行alert()方法和confirm()方法，但可以使用XMLHttpRequest对象发出AJAX请求
+（5）文件限制：Worker线程无法读取本地文件，即不能打开本机的文件系统（file://），它所加载的脚本，必须来自网络
+基本用法 数据通信 （1）主线程与Worker之间的通信内容，可以是文本，也可以是对象。需要注意的是，这种通信是拷贝关系，即是传值不是传址，Worker对通信内容的修改，不会影响到主线程。事实上，浏览器内部的运行机制，先将通信内容串行化，然后把串行化后的字符串发给Worker，后者再将它还原。
+（2）主线程与Worker之间也可以交换二进制数据，例如：File、Blob、ArrayBuffer等类型，也可以在线程之间发送
+实战场景 Reference [1] https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API
+[2] https://www.ruanyifeng.com/blog/2018/07/web-worker.html
+[3] https://www.freecodecamp.org/chinese/news/general-introduction-to-web-worker/'>
+<title>Webworker</title>
 
-<link rel='canonical' href='https://js0205.github.io/p/first-post/'>
+<link rel='canonical' href='https://js0205.github.io/p/webworker/'>
 
-<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='First Post'>
-<meta property='og:description' content='FirstPostFirstPostFirst PostFirst PostFirst PosFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst Post'>
-<meta property='og:url' content='https://js0205.github.io/p/first-post/'>
-<meta property='og:site_name' content='Bin Gao&#39;s Blog'>
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='Webworker'>
+<meta property='og:description' content='概念 （1）通过使用Web Workers，Web应用程序可以在独立于主线程的后台线程中，运行一个脚本操作。这样做的好处是可以在独立线程中执行费时的处理任务，从而允许主线程（通常是UI线程）不会因此被阻塞/放慢
+使用注意点 Web Worker有以下几个使用注意点：
+（1）同源限制：分配给Worker线程运行的脚本文件，必须与主线程的脚本文件同源
+（2）DOM限制：Worker线程所在的全局对象，与主线程不一样，无法读取主线程所在网页的DOM对象，也无法使用document、window、parent这些对象。但是，Worker线程可以navigator对象和location对象
+（3）通信联系：Worker线程和主线程不在同一个上下文环境，它们不能直接通信，必须通过消息完成
+（4）脚本限制：Worker线程不能执行alert()方法和confirm()方法，但可以使用XMLHttpRequest对象发出AJAX请求
+（5）文件限制：Worker线程无法读取本地文件，即不能打开本机的文件系统（file://），它所加载的脚本，必须来自网络
+基本用法 数据通信 （1）主线程与Worker之间的通信内容，可以是文本，也可以是对象。需要注意的是，这种通信是拷贝关系，即是传值不是传址，Worker对通信内容的修改，不会影响到主线程。事实上，浏览器内部的运行机制，先将通信内容串行化，然后把串行化后的字符串发给Worker，后者再将它还原。
+（2）主线程与Worker之间也可以交换二进制数据，例如：File、Blob、ArrayBuffer等类型，也可以在线程之间发送
+实战场景 Reference [1] https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API
+[2] https://www.ruanyifeng.com/blog/2018/07/web-worker.html
+[3] https://www.freecodecamp.org/chinese/news/general-introduction-to-web-worker/'>
+<meta property='og:url' content='https://js0205.github.io/p/webworker/'>
+<meta property='og:site_name' content='Icy Gao&#39;s Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-11-28T19:54:57&#43;08:00'/><meta property='article:modified_time' content='2022-11-28T19:54:57&#43;08:00'/>
-<meta name="twitter:title" content="First Post">
-<meta name="twitter:description" content="FirstPostFirstPostFirst PostFirst PostFirst PosFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst Post">
+<meta name="twitter:title" content="Webworker">
+<meta name="twitter:description" content="概念 （1）通过使用Web Workers，Web应用程序可以在独立于主线程的后台线程中，运行一个脚本操作。这样做的好处是可以在独立线程中执行费时的处理任务，从而允许主线程（通常是UI线程）不会因此被阻塞/放慢
+使用注意点 Web Worker有以下几个使用注意点：
+（1）同源限制：分配给Worker线程运行的脚本文件，必须与主线程的脚本文件同源
+（2）DOM限制：Worker线程所在的全局对象，与主线程不一样，无法读取主线程所在网页的DOM对象，也无法使用document、window、parent这些对象。但是，Worker线程可以navigator对象和location对象
+（3）通信联系：Worker线程和主线程不在同一个上下文环境，它们不能直接通信，必须通过消息完成
+（4）脚本限制：Worker线程不能执行alert()方法和confirm()方法，但可以使用XMLHttpRequest对象发出AJAX请求
+（5）文件限制：Worker线程无法读取本地文件，即不能打开本机的文件系统（file://），它所加载的脚本，必须来自网络
+基本用法 数据通信 （1）主线程与Worker之间的通信内容，可以是文本，也可以是对象。需要注意的是，这种通信是拷贝关系，即是传值不是传址，Worker对通信内容的修改，不会影响到主线程。事实上，浏览器内部的运行机制，先将通信内容串行化，然后把串行化后的字符串发给Worker，后者再将它还原。
+（2）主线程与Worker之间也可以交换二进制数据，例如：File、Blob、ArrayBuffer等类型，也可以在线程之间发送
+实战场景 Reference [1] https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API
+[2] https://www.ruanyifeng.com/blog/2018/07/web-worker.html
+[3] https://www.freecodecamp.org/chinese/news/general-introduction-to-web-worker/">
     </head>
     <body class="
     article-page
@@ -40,7 +73,7 @@
     })();
 </script>
 <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
@@ -69,7 +102,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">Bin Gao&#39;s Blog</a></h1>
+            <h1 class="site-name"><a href="/">Icy Gao&#39;s Blog</a></h1>
             <h2 class="site-description">No one is coming.</h2>
         </div>
     </header><ol class="social-menu">
@@ -133,9 +166,9 @@
 
                     <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
                         
-                            <option value="https://js0205.github.io/" selected>English</option>
+                            <option value="https://js0205.github.io/en/" >English</option>
                         
-                            <option value="https://js0205.github.io/zh-cn/" >中文</option>
+                            <option value="https://js0205.github.io/" selected>中文</option>
                         
                             <option value="https://js0205.github.io/ar/" >عربي</option>
                         
@@ -161,14 +194,50 @@
 
 
 
-                    <span>Dark Mode</span>
+                    <span>暗色模式</span>
                 </li>
             
         </div>
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#概念">概念</a></li>
+    <li><a href="#使用注意点">使用注意点</a></li>
+    <li><a href="#基本用法">基本用法</a></li>
+    <li><a href="#数据通信">数据通信</a></li>
+    <li><a href="#实战场景">实战场景</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -179,7 +248,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/first-post/">First Post</a>
+            <a href="/p/webworker/">Webworker</a>
         </h2>
     
         
@@ -216,7 +285,7 @@
 
 
                 <time class="article-time--reading">
-                    1 minute read
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -231,7 +300,27 @@
     <section class="article-content">
     
     
-    <p>FirstPostFirstPostFirst PostFirst PostFirst PosFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst PostFirst Post</p>
+    <h2 id="概念">概念</h2>
+<p>（1）通过使用Web Workers，Web应用程序可以在独立于主线程的后台线程中，运行一个脚本操作。这样做的好处是可以在独立线程中执行费时的处理任务，从而允许主线程（通常是UI线程）不会因此被阻塞/放慢</p>
+<h2 id="使用注意点">使用注意点</h2>
+<p>Web Worker有以下几个使用注意点：</p>
+<p>（1）同源限制：分配给Worker线程运行的脚本文件，必须与主线程的脚本文件同源</p>
+<p>（2）DOM限制：Worker线程所在的全局对象，与主线程不一样，无法读取主线程所在网页的DOM对象，也无法使用document、window、parent这些对象。但是，Worker线程可以navigator对象和location对象</p>
+<p>（3）通信联系：Worker线程和主线程不在同一个上下文环境，它们不能直接通信，必须通过消息完成</p>
+<p>（4）脚本限制：Worker线程不能执行alert()方法和confirm()方法，但可以使用XMLHttpRequest对象发出AJAX请求</p>
+<p>（5）文件限制：Worker线程无法读取本地文件，即不能打开本机的文件系统（file://），它所加载的脚本，必须来自网络</p>
+<h2 id="基本用法">基本用法</h2>
+<h2 id="数据通信">数据通信</h2>
+<p>（1）主线程与Worker之间的通信内容，可以是文本，也可以是对象。需要注意的是，<strong>这种通信是拷贝关系，即是传值不是传址</strong>，Worker对通信内容的修改，不会影响到主线程。事实上，浏览器内部的运行机制，先将通信内容串行化，然后把串行化后的字符串发给Worker，后者再将它还原。</p>
+<p>（2）主线程与Worker之间也可以交换二进制数据，例如：File、Blob、ArrayBuffer等类型，也可以在线程之间发送</p>
+<h2 id="实战场景">实战场景</h2>
+<h2 id="reference">Reference</h2>
+<p>[1] <a class="link" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API"  target="_blank" rel="noopener"
+    >https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API</a></p>
+<p>[2] <a class="link" href="https://www.ruanyifeng.com/blog/2018/07/web-worker.html"  target="_blank" rel="noopener"
+    >https://www.ruanyifeng.com/blog/2018/07/web-worker.html</a></p>
+<p>[3] <a class="link" href="https://www.freecodecamp.org/chinese/news/general-introduction-to-web-worker/"  target="_blank" rel="noopener"
+    >https://www.freecodecamp.org/chinese/news/general-introduction-to-web-worker/</a></p>
 
 </section>
 
@@ -314,12 +403,12 @@
         
             2020 - 
         
-        2022 Bin Gao&#39;s Blog
+        2022 Icy Gao&#39;s Blog
     </section>
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
 
