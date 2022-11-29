@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='setTimeout/Promise/Async/Await的区别 （1）setTimeout
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='setTimeout/Promise/AsyncAwait的区别 （1）setTimeout
 setTimeout的回调函数放到宏任务队列里，等到执行栈清空以后执行
 （2）Promise
 Promise本身是同步的立即执行函数，当在exector中执行resolve或者reject的时候，此时是异步操作，会先执行then/catch等，等主栈完成后，才会去调用resolve/reject中存放的方法执行
@@ -11,7 +11,7 @@ Promise本身是同步的立即执行函数，当在exector中执行resolve或�
 <link rel='canonical' href='https://js0205.github.io/p/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E4%B9%8Bsettimeout-promise-generator-asyncawait/'>
 
 <link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='异步编程之setTimeout&#43;Promise&#43;Generator&#43;AsyncAwait'>
-<meta property='og:description' content='setTimeout/Promise/Async/Await的区别 （1）setTimeout
+<meta property='og:description' content='setTimeout/Promise/AsyncAwait的区别 （1）setTimeout
 setTimeout的回调函数放到宏任务队列里，等到执行栈清空以后执行
 （2）Promise
 Promise本身是同步的立即执行函数，当在exector中执行resolve或者reject的时候，此时是异步操作，会先执行then/catch等，等主栈完成后，才会去调用resolve/reject中存放的方法执行
@@ -20,7 +20,7 @@ Promise本身是同步的立即执行函数，当在exector中执行resolve或�
 <meta property='og:site_name' content='Icy Gao&#39;s Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-11-29T11:11:06&#43;08:00'/><meta property='article:modified_time' content='2022-11-29T11:11:06&#43;08:00'/>
 <meta name="twitter:title" content="异步编程之setTimeout&#43;Promise&#43;Generator&#43;AsyncAwait">
-<meta name="twitter:description" content="setTimeout/Promise/Async/Await的区别 （1）setTimeout
+<meta name="twitter:description" content="setTimeout/Promise/AsyncAwait的区别 （1）setTimeout
 setTimeout的回调函数放到宏任务队列里，等到执行栈清空以后执行
 （2）Promise
 Promise本身是同步的立即执行函数，当在exector中执行resolve或者reject的时候，此时是异步操作，会先执行then/catch等，等主栈完成后，才会去调用resolve/reject中存放的方法执行
@@ -202,7 +202,7 @@ Promise本身是同步的立即执行函数，当在exector中执行resolve或�
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#settimeoutpromiseasyncawait的区别">setTimeout/Promise/Async/Await的区别</a></li>
+    <li><a href="#settimeoutpromiseasyncawait的区别">setTimeout/Promise/AsyncAwait的区别</a></li>
     <li><a href="#异步编程的发展历程">异步编程的发展历程</a></li>
   </ol>
 </nav>
@@ -275,7 +275,7 @@ Promise本身是同步的立即执行函数，当在exector中执行resolve或�
     <section class="article-content">
     
     
-    <h2 id="settimeoutpromiseasyncawait的区别">setTimeout/Promise/Async/Await的区别</h2>
+    <h2 id="settimeoutpromiseasyncawait的区别">setTimeout/Promise/AsyncAwait的区别</h2>
 <p>（1）setTimeout</p>
 <p>setTimeout的回调函数放到<strong>宏任务队列</strong>里，等到<strong>执行栈</strong>清空以后执行</p>
 <p>（2）Promise</p>
