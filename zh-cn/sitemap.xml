@@ -2,8 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://js0205.github.io/p/call-bind-apply%E4%B8%89%E8%80%85%E7%9A%84%E5%BC%82%E5%90%8C/</loc>
+    <lastmod>2022-11-30T22:04:27+08:00</lastmod>
+  </url><url>
     <loc>https://js0205.github.io/</loc>
-    <lastmod>2022-11-30T19:35:11+08:00</lastmod>
+    <lastmod>2022-11-30T22:04:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -21,7 +24,13 @@
                 />
   </url><url>
     <loc>https://js0205.github.io/post/</loc>
-    <lastmod>2022-11-30T19:35:11+08:00</lastmod>
+    <lastmod>2022-11-30T22:04:27+08:00</lastmod>
+  </url><url>
+    <loc>https://js0205.github.io/p/get%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    <lastmod>2022-11-30T22:04:02+08:00</lastmod>
+  </url><url>
+    <loc>https://js0205.github.io/p/ajax/</loc>
+    <lastmod>2022-11-30T20:06:33+08:00</lastmod>
   </url><url>
     <loc>https://js0205.github.io/p/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
     <lastmod>2022-11-30T19:35:11+08:00</lastmod>
