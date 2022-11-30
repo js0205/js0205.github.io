@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://js0205.github.io/</loc>
-    <lastmod>2022-11-30T22:04:48+08:00</lastmod>
+    <lastmod>2022-11-30T23:28:05+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -21,7 +21,10 @@
                 />
   </url><url>
     <loc>https://js0205.github.io/post/</loc>
-    <lastmod>2022-11-30T22:04:48+08:00</lastmod>
+    <lastmod>2022-11-30T23:28:05+08:00</lastmod>
+  </url><url>
+    <loc>https://js0205.github.io/p/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</loc>
+    <lastmod>2022-11-30T23:28:05+08:00</lastmod>
   </url><url>
     <loc>https://js0205.github.io/p/%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96/</loc>
     <lastmod>2022-11-30T22:04:48+08:00</lastmod>
@@ -41,7 +44,7 @@
     <loc>https://js0205.github.io/p/%E6%95%B0%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2022-11-29T22:11:45+08:00</lastmod>
   </url><url>
-    <loc>https://js0205.github.io/p/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8Bwebworkers/</loc>
+    <loc>https://js0205.github.io/p/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8Bweb-workers/</loc>
     <lastmod>2022-11-29T11:17:13+08:00</lastmod>
   </url><url>
     <loc>https://js0205.github.io/p/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E4%B9%8Bsettimeout-promise-generator-asyncawait/</loc>

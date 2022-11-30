@@ -6,7 +6,53 @@
         <description>Recent content on Icy Gao&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 30 Nov 2022 22:04:48 +0800</lastBuildDate><atom:link href="https://js0205.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 30 Nov 2022 23:28:05 +0800</lastBuildDate><atom:link href="https://js0205.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>事件循环</title>
+        <link>https://js0205.github.io/p/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</link>
+        <pubDate>Wed, 30 Nov 2022 23:28:05 +0800</pubDate>
+        
+        <guid>https://js0205.github.io/p/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</guid>
+        <description>&lt;h2 id=&#34;js是单线程-浏览器是多线程的&#34;&gt;JS是单线程 浏览器是多线程的&lt;/h2&gt;
+&lt;p&gt;JavaScript的主要用途是与用户互动，以及操作DOM。比如，假定JavaScript同时有两个线程，一个线程在某个DOM节点上添加内容，另一个线程删除了这个节点，这时浏览器应该以哪个线程为准？&lt;/p&gt;
+&lt;h2 id=&#34;宏任务和微任务的概念是什么&#34;&gt;宏任务和微任务的概念是什么&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;同步&lt;/strong&gt;：会立即执行的任务，直接进入到主线程中执行。（主执行栈：后进先出）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;异步&lt;/strong&gt;：（先同步后异步）不会立即执行的任务（宏任务与微任务）（任务队列：先进先出）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;宏任务&lt;/strong&gt;（marcotask)：是指消息队列中的等待被主线程执行的事件，宏任务执行时都会重新创建栈，然后调用宏任务中的函数，栈也会随着变化，但宏任务执行结束时，栈也会随之销毁。&lt;strong&gt;类型：script、setTimeout、setInterval、setImmediate、I/O、UI rendering&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;微任务&lt;/strong&gt;（microtask）：可以把微任务看成是一个需要异步执行的函数，执行时机是在主函数执行结束之后，当前宏任务结束之前。&lt;strong&gt;类型：原生Promise.then()、process.nextTick、MutationObserver&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;注：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;执行栈-&amp;gt;微任务队列（清空）-&amp;gt;一个宏任务队列入执行栈-&amp;gt;微任务队列（清空）-&amp;gt;一个宏任务队列入执行栈-&amp;gt;微任务队列（清空）-&amp;gt;&amp;hellip;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;宏任务setTimeout setInterval setImmedate&lt;strong&gt;也有先后顺序，先执行setTimeout，后执行setImmediate&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;微任务promise.then() process.nextTick()&lt;strong&gt;有先后顺序，promise.then()后执行&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;事件循环event-loop&#34;&gt;事件循环（Event Loop)&lt;/h2&gt;
+&lt;p&gt;（1）所有的&lt;strong&gt;同步任务&lt;/strong&gt;都在主线程上执行，形成一个&lt;strong&gt;执行栈&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（2）除了主线程之外，还存在一个&lt;strong&gt;任务队列&lt;/strong&gt;，只要异步任务有了运行结果，就在任务队列中植入一个时间标记&lt;/p&gt;
+&lt;p&gt;（3）主线程完成所有任务（&lt;strong&gt;执行栈清空&lt;/strong&gt;），就会读取&lt;strong&gt;任务队列&lt;/strong&gt;、Event Loop把微任务队列执行清空&lt;/p&gt;
+&lt;p&gt;（4）&lt;strong&gt;微任务队列&lt;/strong&gt;清空后，进入&lt;strong&gt;宏任务队列&lt;/strong&gt;的第一项任务放入Stack（栈）中执行，执行完成后，查看微任务队列是否有任务，有的话，清空&lt;strong&gt;微任务队列&lt;/strong&gt;。重复4，继续从宏任务中取任务执行，执行完成之后，继续清空微任务，如此反复循环，直至清空所有的任务&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2022/png/2207879/1669821957673-5af49377-d5ec-4e1d-80e4-f088c61d4a69.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2022/png/2207879/1669821963899-9c443a1e-8846-4f32-abc6-b58f9eff4aa7.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>数组扁平化</title>
         <link>https://js0205.github.io/p/%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96/</link>
         <pubDate>Wed, 30 Nov 2022 22:04:48 +0800</pubDate>
@@ -690,13 +736,14 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>大数据性能优化之WebWorkers</title>
-        <link>https://js0205.github.io/p/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8Bwebworkers/</link>
+        <title>大数据性能优化之Web Workers</title>
+        <link>https://js0205.github.io/p/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8Bweb-workers/</link>
         <pubDate>Tue, 29 Nov 2022 11:17:13 +0800</pubDate>
         
-        <guid>https://js0205.github.io/p/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8Bwebworkers/</guid>
+        <guid>https://js0205.github.io/p/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8Bweb-workers/</guid>
         <description>&lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
 &lt;p&gt;（1）通过使用Web Workers，Web应用程序可以在独立于主线程的后台线程中，运行一个脚本操作。这样做的好处是可以在独立线程中执行费时的处理任务，从而允许主线程（通常是UI线程）不会因此被阻塞/放慢&lt;/p&gt;
+&lt;p&gt;（2）js有了多线程能力。js是单线程，虽然提供了异步的方案，但本质上还是单线程运行，webworkers让js有了多线程的能力，但是使用起来还是有部分限制&lt;/p&gt;
 &lt;h2 id=&#34;使用注意点&#34;&gt;使用注意点&lt;/h2&gt;
 &lt;p&gt;Web Worker有以下几个使用注意点：&lt;/p&gt;
 &lt;p&gt;（1）同源限制：分配给Worker线程运行的脚本文件，必须与主线程的脚本文件同源&lt;/p&gt;
