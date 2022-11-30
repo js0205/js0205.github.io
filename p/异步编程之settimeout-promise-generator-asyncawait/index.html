@@ -597,11 +597,23 @@ Promise本身是同步的立即执行函数，当在exector中执行resolve或�
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>（5）为什么Async/Await更好？</p>
-<p>（1）<strong>简洁</strong>：由示例而知，使用Async/Await明显节约了不少代码。我们不需要写.then，不需要写匿名函数处理Promise的resolve值，也不需要定义多余的data变量，还避免了嵌套代码。这些小的优点会迅速累计起来，这在之后的代码示例中会更加明显</p>
-<p>（2）<strong>错误处理</strong>：Async/Await让try/catch可以**同时处理同步和异步错误。**在下面的promise示例中，try/catch不能处理JSON.parse的错误，因为它在Promise中。我们需要使用.catch，这样错误处理代码非常冗余。并且，在我们的实际生产代码会更加复杂</p>
-<p>（3）<strong>可读性</strong>：使用async/await编写可以大大提高可读性</p>
-<p>（4）<strong>错误栈</strong>：Promise链中返回的错误栈没有给出错误发生位置的线索。更糟糕的是，它会误导我们：错误站中唯一的函数名为callAPromise，然而它和错误没有关系（文件名和行号还是有用的）</p>
-<p>（5）<strong>调试</strong>：最后一点，也是非常重要的一点在于，async/await能够使得代码调试更简单</p>
+<ul>
+<li>
+<p><strong>简洁</strong>：由示例而知，使用Async/Await明显节约了不少代码。我们不需要写.then，不需要写匿名函数处理Promise的resolve值，也不需要定义多余的data变量，还避免了嵌套代码。这些小的优点会迅速累计起来，这在之后的代码示例中会更加明显</p>
+</li>
+<li>
+<p><strong>错误处理</strong>：Async/Await让try/catch可以**同时处理同步和异步错误。**在下面的promise示例中，try/catch不能处理JSON.parse的错误，因为它在Promise中。我们需要使用.catch，这样错误处理代码非常冗余。并且，在我们的实际生产代码会更加复杂</p>
+</li>
+<li>
+<p><strong>可读性</strong>：使用async/await编写可以大大提高可读性</p>
+</li>
+<li>
+<p><strong>错误栈</strong>：Promise链中返回的错误栈没有给出错误发生位置的线索。更糟糕的是，它会误导我们：错误站中唯一的函数名为callAPromise，然而它和错误没有关系（文件名和行号还是有用的）</p>
+</li>
+<li>
+<p><strong>调试</strong>：最后一点，也是非常重要的一点在于，async/await能够使得代码调试更简单</p>
+</li>
+</ul>
 
 </section>
 

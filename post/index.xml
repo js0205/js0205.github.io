@@ -12,12 +12,18 @@
         <pubDate>Tue, 29 Nov 2022 22:11:45 +0800</pubDate>
         
         <guid>https://js0205.github.io/p/%E6%95%B0%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95/</guid>
-        <description>&lt;p&gt;&lt;strong&gt;shift&lt;/strong&gt;：删除原数组的第一项，并返回删除元素的值，如果数组为空则返回undefined&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;unshift&lt;/strong&gt;：将参数添加到原数组的开头，并返回数组的长度&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;pop&lt;/strong&gt;：删除原数组最后一项，并返回删除元素的值，如果数组为空则返回undefined&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;push&lt;/strong&gt;：将参数添加到原数组末尾，并返回数组的长度&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;concat()&lt;/strong&gt;：可以将两个数组合并在一起，如果是使用ES6语法也可以用扩展运算符&amp;hellip;来代替&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;splice&lt;/strong&gt;：参数为(start,deleteCount,val1,val2&amp;hellip;)：从start位置开始删除deleteCount项，并从该位置起插入。&lt;strong&gt;原数组改变&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;h2 id=&#34;shift&#34;&gt;&lt;strong&gt;shift&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;删除原数组的第一项，并返回删除元素的值，如果数组为空则返回undefined&lt;/p&gt;
+&lt;h2 id=&#34;unshift&#34;&gt;&lt;strong&gt;unshift&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;将参数添加到原数组的开头，并返回数组的长度&lt;/p&gt;
+&lt;h2 id=&#34;pop&#34;&gt;&lt;strong&gt;pop&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;删除原数组最后一项，并返回删除元素的值，如果数组为空则返回undefined&lt;/p&gt;
+&lt;h2 id=&#34;push&#34;&gt;&lt;strong&gt;push&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;将参数添加到原数组末尾，并返回数组的长度&lt;/p&gt;
+&lt;h2 id=&#34;concat&#34;&gt;&lt;strong&gt;concat()&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;可以将两个数组合并在一起，如果是使用ES6语法也可以用扩展运算符&amp;hellip;来代替&lt;/p&gt;
+&lt;h2 id=&#34;splice&#34;&gt;&lt;strong&gt;splice&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;参数为(start,deleteCount,val1,val2&amp;hellip;)：从start位置开始删除deleteCount项，并从该位置起插入。&lt;strong&gt;原数组改变&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -32,13 +38,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//输出结果：[ 3, 4 ]
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;reverse&lt;/strong&gt;：将数组反序&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;sort&lt;/strong&gt;：参数为(orderfunction），按指定的参数对数组进行排序。&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;reverse&#34;&gt;&lt;strong&gt;reverse&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;将数组反序&lt;/p&gt;
+&lt;h2 id=&#34;sort&#34;&gt;&lt;strong&gt;sort&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;参数为(orderfunction），按指定的参数对数组进行排序。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;原地算法&lt;/li&gt;
 &lt;li&gt;快排不属于原地算法&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;slice&lt;/strong&gt;：参数为(start,end)，可以截取出数组某部分的元素为一个&lt;strong&gt;新的数组&lt;/strong&gt;，有两个必填的参数，第一个是起始位置，第二个是结束位置（操作时数组减1），原数组不改变&lt;/p&gt;
+&lt;h2 id=&#34;slice&#34;&gt;&lt;strong&gt;slice&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;参数为(start,end)，可以截取出数组某部分的元素为一个&lt;strong&gt;新的数组&lt;/strong&gt;，有两个必填的参数，第一个是起始位置，第二个是结束位置（操作时数组减1），原数组不改变&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -47,7 +56,8 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;newArr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;slice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// newArr [0,1,2,3,4]
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;join&lt;/strong&gt;：参数为(separator），将数组的元素组起一个字符串，以separator为分隔符，省略的话则用逗号为分隔符&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;join&#34;&gt;&lt;strong&gt;join&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;参数为(separator），将数组的元素组起一个字符串，以separator为分隔符，省略的话则用逗号为分隔符&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -60,7 +70,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//输出结果：&amp;#39;1|2|3|4|5&amp;#39;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Array和Object的特性&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;array和object的特性&#34;&gt;&lt;strong&gt;Array和Object的特性&lt;/strong&gt;&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -92,7 +102,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;map()&lt;/strong&gt;：&lt;/p&gt;
+&lt;h2 id=&#34;map&#34;&gt;&lt;strong&gt;map()&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;（1）功能：map作用使映射调用此方法的数组。按照原始数组元素顺序依次处理元素&lt;/p&gt;
 &lt;p&gt;（2）参数：(item,index,arr)&lt;/p&gt;
 &lt;p&gt;（3）返回值：不会改变原始数组，返回&lt;strong&gt;新数组&lt;/strong&gt;，长度和原始数组一致&lt;/p&gt;
@@ -501,11 +511,23 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;（5）为什么Async/Await更好？&lt;/p&gt;
-&lt;p&gt;（1）&lt;strong&gt;简洁&lt;/strong&gt;：由示例而知，使用Async/Await明显节约了不少代码。我们不需要写.then，不需要写匿名函数处理Promise的resolve值，也不需要定义多余的data变量，还避免了嵌套代码。这些小的优点会迅速累计起来，这在之后的代码示例中会更加明显&lt;/p&gt;
-&lt;p&gt;（2）&lt;strong&gt;错误处理&lt;/strong&gt;：Async/Await让try/catch可以**同时处理同步和异步错误。**在下面的promise示例中，try/catch不能处理JSON.parse的错误，因为它在Promise中。我们需要使用.catch，这样错误处理代码非常冗余。并且，在我们的实际生产代码会更加复杂&lt;/p&gt;
-&lt;p&gt;（3）&lt;strong&gt;可读性&lt;/strong&gt;：使用async/await编写可以大大提高可读性&lt;/p&gt;
-&lt;p&gt;（4）&lt;strong&gt;错误栈&lt;/strong&gt;：Promise链中返回的错误栈没有给出错误发生位置的线索。更糟糕的是，它会误导我们：错误站中唯一的函数名为callAPromise，然而它和错误没有关系（文件名和行号还是有用的）&lt;/p&gt;
-&lt;p&gt;（5）&lt;strong&gt;调试&lt;/strong&gt;：最后一点，也是非常重要的一点在于，async/await能够使得代码调试更简单&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;简洁&lt;/strong&gt;：由示例而知，使用Async/Await明显节约了不少代码。我们不需要写.then，不需要写匿名函数处理Promise的resolve值，也不需要定义多余的data变量，还避免了嵌套代码。这些小的优点会迅速累计起来，这在之后的代码示例中会更加明显&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;错误处理&lt;/strong&gt;：Async/Await让try/catch可以**同时处理同步和异步错误。**在下面的promise示例中，try/catch不能处理JSON.parse的错误，因为它在Promise中。我们需要使用.catch，这样错误处理代码非常冗余。并且，在我们的实际生产代码会更加复杂&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;可读性&lt;/strong&gt;：使用async/await编写可以大大提高可读性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;错误栈&lt;/strong&gt;：Promise链中返回的错误栈没有给出错误发生位置的线索。更糟糕的是，它会误导我们：错误站中唯一的函数名为callAPromise，然而它和错误没有关系（文件名和行号还是有用的）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;调试&lt;/strong&gt;：最后一点，也是非常重要的一点在于，async/await能够使得代码调试更简单&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         
