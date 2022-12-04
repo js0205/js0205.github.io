@@ -6,7 +6,15 @@
         <description>Recent content in Tags on Icy Gao&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 30 Nov 2022 23:28:05 +0800</lastBuildDate><atom:link href="https://js0205.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 04 Dec 2022 20:08:23 +0800</lastBuildDate><atom:link href="https://js0205.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>React</title>
+        <link>https://js0205.github.io/tags/react/</link>
+        <pubDate>Sun, 04 Dec 2022 20:08:23 +0800</pubDate>
+        
+        <guid>https://js0205.github.io/tags/react/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>JavaScript</title>
         <link>https://js0205.github.io/tags/javascript/</link>
         <pubDate>Wed, 30 Nov 2022 23:28:05 +0800</pubDate>

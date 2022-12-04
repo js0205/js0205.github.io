@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='什么是Redux? Redux是一个JavaScript应用状态管理的库，当项目很复杂的时候，属性传递已经达不到我们预期，可以使用Redux解决数据传递问题，统一状态管理。换句话说，Redux就是用来处理和管理应用的状态/数据
+redux是一个独立专门用于做状态管理的JS库
+例子：如果要进行加一操作流程如下：
+核心概念 Store（存储数据） 在redux里面，只有一个Store，整个应用需要管理的数据都在这个Store里面。这个Store我们不能直接取改变，我们只能通过返回一个新的Store去更改它。redux提供了一个createStore来创建state
+1 2 import { createStore } from &amp;#39;redux&amp;#39;; const store = createStore(reducer); action（方法：type名称，payload参数） 这个action指的是视图层发起的一个操作，告诉Store我们需要改变。比如用户点击了按钮，我们就要去请求列表，列表的数据就会变更。每个action必须有一个type属性，这表示action的名称，然后还可以有一个payload属性，这个属性可以带一些参数，用作Store变更：
+1 2 3 4 const action = { type: &amp;#39;ADD_ITEM&amp;#39;, payload: &amp;#39;new item&amp;#39;,//可选属性 } dispatch（发出action） 在上面我们定义了一个Action，但是Action不会自己主动发出变更操作到Store，所以这里我们需要一个叫dispatch的东西，它专门用来发出action，不过还好，这个dispatch不需要我们自己定义和实现，redux已经帮我们写好了，在redux里面，**store.dispatch()**是View发出Action的唯一方法
+1 2 3 4 store.dispatch({ type:&amp;#39;ADD_ITEM&amp;#39;, payload:&amp;#39;new item&amp;#39;, //可选属性 }) Reducer（计算新的store的） 当dispatch发起了一个action之后，会到达reducer，那么这个reducer用来干什么呢？顾名思义，这个reducer就是用来计算新的store的，reducer接收两个参数：当前的state和接收到的action，然后它经过计算，会返回一个新的state。（不能直接更改state，必须通过返回一个新的state来进行变更。）
+1 2 3 4 const reducer=function(prevState,action){ ... return newState } State（数据集合） store某个节点对应的数据集合就是state。state是被托管的数据，也就是每次出发监听事件，我们要操作的数据。可以通过store.getState()获得：store.getState()即可获取到reducer中的state
+1 2 let store=createStore(fn); let state=store.getState(); Redux核心API 引入必要组件：
+1 import {createStore} from &amp;#39;redux&amp;#39; 生成store：'>
+<title>Redux</title>
+
+<link rel='canonical' href='https://js0205.github.io/p/redux/'>
+
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='Redux'>
+<meta property='og:description' content='什么是Redux? Redux是一个JavaScript应用状态管理的库，当项目很复杂的时候，属性传递已经达不到我们预期，可以使用Redux解决数据传递问题，统一状态管理。换句话说，Redux就是用来处理和管理应用的状态/数据
+redux是一个独立专门用于做状态管理的JS库
+例子：如果要进行加一操作流程如下：
+核心概念 Store（存储数据） 在redux里面，只有一个Store，整个应用需要管理的数据都在这个Store里面。这个Store我们不能直接取改变，我们只能通过返回一个新的Store去更改它。redux提供了一个createStore来创建state
+1 2 import { createStore } from &amp;#39;redux&amp;#39;; const store = createStore(reducer); action（方法：type名称，payload参数） 这个action指的是视图层发起的一个操作，告诉Store我们需要改变。比如用户点击了按钮，我们就要去请求列表，列表的数据就会变更。每个action必须有一个type属性，这表示action的名称，然后还可以有一个payload属性，这个属性可以带一些参数，用作Store变更：
+1 2 3 4 const action = { type: &amp;#39;ADD_ITEM&amp;#39;, payload: &amp;#39;new item&amp;#39;,//可选属性 } dispatch（发出action） 在上面我们定义了一个Action，但是Action不会自己主动发出变更操作到Store，所以这里我们需要一个叫dispatch的东西，它专门用来发出action，不过还好，这个dispatch不需要我们自己定义和实现，redux已经帮我们写好了，在redux里面，**store.dispatch()**是View发出Action的唯一方法
+1 2 3 4 store.dispatch({ type:&amp;#39;ADD_ITEM&amp;#39;, payload:&amp;#39;new item&amp;#39;, //可选属性 }) Reducer（计算新的store的） 当dispatch发起了一个action之后，会到达reducer，那么这个reducer用来干什么呢？顾名思义，这个reducer就是用来计算新的store的，reducer接收两个参数：当前的state和接收到的action，然后它经过计算，会返回一个新的state。（不能直接更改state，必须通过返回一个新的state来进行变更。）
+1 2 3 4 const reducer=function(prevState,action){ ... return newState } State（数据集合） store某个节点对应的数据集合就是state。state是被托管的数据，也就是每次出发监听事件，我们要操作的数据。可以通过store.getState()获得：store.getState()即可获取到reducer中的state
+1 2 let store=createStore(fn); let state=store.getState(); Redux核心API 引入必要组件：
+1 import {createStore} from &amp;#39;redux&amp;#39; 生成store：'>
+<meta property='og:url' content='https://js0205.github.io/p/redux/'>
+<meta property='og:site_name' content='Icy Gao&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='React' /><meta property='article:published_time' content='2022-12-04T20:08:23&#43;08:00'/><meta property='article:modified_time' content='2022-12-04T20:08:23&#43;08:00'/>
+<meta name="twitter:title" content="Redux">
+<meta name="twitter:description" content="什么是Redux? Redux是一个JavaScript应用状态管理的库，当项目很复杂的时候，属性传递已经达不到我们预期，可以使用Redux解决数据传递问题，统一状态管理。换句话说，Redux就是用来处理和管理应用的状态/数据
+redux是一个独立专门用于做状态管理的JS库
+例子：如果要进行加一操作流程如下：
+核心概念 Store（存储数据） 在redux里面，只有一个Store，整个应用需要管理的数据都在这个Store里面。这个Store我们不能直接取改变，我们只能通过返回一个新的Store去更改它。redux提供了一个createStore来创建state
+1 2 import { createStore } from &amp;#39;redux&amp;#39;; const store = createStore(reducer); action（方法：type名称，payload参数） 这个action指的是视图层发起的一个操作，告诉Store我们需要改变。比如用户点击了按钮，我们就要去请求列表，列表的数据就会变更。每个action必须有一个type属性，这表示action的名称，然后还可以有一个payload属性，这个属性可以带一些参数，用作Store变更：
+1 2 3 4 const action = { type: &amp;#39;ADD_ITEM&amp;#39;, payload: &amp;#39;new item&amp;#39;,//可选属性 } dispatch（发出action） 在上面我们定义了一个Action，但是Action不会自己主动发出变更操作到Store，所以这里我们需要一个叫dispatch的东西，它专门用来发出action，不过还好，这个dispatch不需要我们自己定义和实现，redux已经帮我们写好了，在redux里面，**store.dispatch()**是View发出Action的唯一方法
+1 2 3 4 store.dispatch({ type:&amp;#39;ADD_ITEM&amp;#39;, payload:&amp;#39;new item&amp;#39;, //可选属性 }) Reducer（计算新的store的） 当dispatch发起了一个action之后，会到达reducer，那么这个reducer用来干什么呢？顾名思义，这个reducer就是用来计算新的store的，reducer接收两个参数：当前的state和接收到的action，然后它经过计算，会返回一个新的state。（不能直接更改state，必须通过返回一个新的state来进行变更。）
+1 2 3 4 const reducer=function(prevState,action){ ... return newState } State（数据集合） store某个节点对应的数据集合就是state。state是被托管的数据，也就是每次出发监听事件，我们要操作的数据。可以通过store.getState()获得：store.getState()即可获取到reducer中的state
+1 2 let store=createStore(fn); let state=store.getState(); Redux核心API 引入必要组件：
+1 import {createStore} from &amp;#39;redux&amp;#39; 生成store：">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YLJBGXPR5"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3YLJBGXPR5', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu9f960d4fec099d14813837895f20d642_46055_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😃</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Icy Gao&#39;s Blog</a></h1>
+            <h2 class="site-description">No one is coming.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='mailto:icy_gao@foxmail.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="3" y="5" width="18" height="14" rx="2" />
+  <polyline points="3 7 12 13 21 7" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/js0205'
+                        target="_blank"
+                        title="js0205"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.cnblogs.com/icyyyy/'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页 / HOME</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档 / ARCHIVES</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/record/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-notebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18" />
+  <line x1="13" y1="8" x2="15" y2="8" />
+  <line x1="13" y1="12" x2="15" y2="12" />
+</svg>
+
+
+
+                
+                <span>杂记 / RECORD</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于 / ABOUT</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索 / SEARCH</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://js0205.github.io/en/" >English</option>
+                        
+                            <option value="https://js0205.github.io/" selected>中文</option>
+                        
+                            <option value="https://js0205.github.io/ar/" >عربي</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/react/" >
+                React
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/redux/">Redux</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 04, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="什么是redux">什么是Redux?</h2>
+<p>Redux是一个JavaScript应用状态管理的库，当项目很复杂的时候，属性传递已经达不到我们预期，可以使用Redux解决数据传递问题，统一状态管理。换句话说，Redux就是用来处理和管理应用的状态/数据</p>
+<p><img src="/p/redux/image1.png"
+	width="600"
+	height="308"
+	srcset="/p/redux/image1_hu9cb7130331358735bfd29c554eaa7e6f_108988_480x0_resize_box_3.png 480w, /p/redux/image1_hu9cb7130331358735bfd29c554eaa7e6f_108988_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="194"
+		data-flex-basis="467px"
+	
+></p>
+<p>redux是一个独立专门用于做状态管理的JS库</p>
+<p><img src="/p/redux/image2.png"
+	width="720"
+	height="407"
+	srcset="/p/redux/image2_hu043fd32ca0ade1bfa5affa9c170f6d50_94283_480x0_resize_box_3.png 480w, /p/redux/image2_hu043fd32ca0ade1bfa5affa9c170f6d50_94283_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="176"
+		data-flex-basis="424px"
+	
+></p>
+<p>例子：如果要进行加一操作流程如下：</p>
+<p><img src="/p/redux/image3.png"
+	width="720"
+	height="405"
+	srcset="/p/redux/image3_hu323411497491cc4192ca028331d14814_97178_480x0_resize_box_3.png 480w, /p/redux/image3_hu323411497491cc4192ca028331d14814_97178_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<h2 id="核心概念">核心概念</h2>
+<h3 id="store存储数据">Store（存储数据）</h3>
+<p>在redux里面，只有一个Store，整个应用需要管理的数据都在这个Store里面。这个Store我们不能直接取改变，我们只能通过返回一个新的Store去更改它。redux提供了一个createStore来创建state</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createStore</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">reducer</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="action方法type名称payload参数">action（方法：type名称，payload参数）</h3>
+<p>这个action指的是视图层发起的一个操作，告诉Store我们需要改变。比如用户点击了按钮，我们就要去请求列表，列表的数据就会变更。每个action必须有一个type属性，这表示action的名称，然后还可以有一个payload属性，这个属性可以带一些参数，用作Store变更：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;ADD_ITEM&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">payload</span><span class="o">:</span> <span class="s1">&#39;new item&#39;</span><span class="p">,</span><span class="c1">//可选属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="dispatch发出action">dispatch（发出action）</h3>
+<p>在上面我们定义了一个Action，但是Action不会自己主动发出变更操作到Store，所以这里我们需要一个叫dispatch的东西，它专门用来发出action，不过还好，这个dispatch不需要我们自己定义和实现，redux已经帮我们写好了，在redux里面，**store.dispatch()**是View发出Action的唯一方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"> <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">type</span><span class="o">:</span><span class="s1">&#39;ADD_ITEM&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">payload</span><span class="o">:</span><span class="s1">&#39;new item&#39;</span><span class="p">,</span> <span class="c1">//可选属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="reducer计算新的store的">Reducer（计算新的store的）</h3>
+<p>当dispatch发起了一个action之后，会到达reducer，那么这个reducer用来干什么呢？顾名思义，这个<strong>reducer就是用来计算新的store的</strong>，reducer接收两个参数：<strong>当前的state</strong>和<strong>接收到的action</strong>，然后它经过计算，会返回一个新的state。（不能直接更改state，必须通过返回一个新的state来进行变更。）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">reducer</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">prevState</span><span class="p">,</span><span class="nx">action</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">newState</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="state数据集合">State（数据集合）</h3>
+<p>store某个节点对应的数据集合就是state。state是被托管的数据，也就是每次出发监听事件，我们要操作的数据。可以通过store.getState()获得：store.getState()即可获取到reducer中的state</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">store</span><span class="o">=</span><span class="nx">createStore</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">state</span><span class="o">=</span><span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="redux核心api">Redux核心API</h2>
+<p>引入必要组件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">createStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>生成store：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">store</span><span class="o">=</span><span class="nx">createStore</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span><span class="nx">state初始状态</span><span class="p">[</span><span class="nx">可选</span><span class="p">]);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>取得当前时刻的state：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"> <span class="kr">const</span> <span class="nx">state</span><span class="o">=</span><span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>发出action：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">type</span><span class="o">:</span><span class="s1">&#39;ADD_TODO&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">text</span><span class="o">:</span><span class="s1">&#39;Learn Redux&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Reducer函数里面不能改变State，必须返回一个全新的对象，请参考下面的写法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">//State是一个对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">state</span><span class="p">,</span> <span class="p">{</span> <span class="nx">thingToChange</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//或者
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">state</span><span class="p">,</span> <span class="p">...</span><span class="nx">newState</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//State是一个数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">aciton</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[...</span><span class="nx">state</span><span class="p">,</span> <span class="nx">newItem</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="redux的优势">Redux的优势</h2>
+<p>没使用redux：</p>
+<p><img src="/p/redux/image4.gif"
+	width="400"
+	height="226"
+	srcset="/p/redux/image4_hud4b311444370da490e495d0b199d49f9_48415_480x0_resize_box_1.gif 480w, /p/redux/image4_hud4b311444370da490e495d0b199d49f9_48415_1024x0_resize_box_1.gif 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="176"
+		data-flex-basis="424px"
+	
+></p>
+<p>使用redux：</p>
+<p><img src="/p/redux/image5.png"
+	width="400"
+	height="226"
+	srcset="/p/redux/image5_hu8dc2034508f5e3f1678c16fa5ba43405_27714_480x0_resize_box_3.png 480w, /p/redux/image5_hu8dc2034508f5e3f1678c16fa5ba43405_27714_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="176"
+		data-flex-basis="424px"
+	
+></p>
+<h3 id="redux使状态可预测">Redux使状态可预测</h3>
+<p>在Redux中，状态始终是可预测的。如果将相同的状态和动作传递给减速器，则总是会产生相同的结果，因为减速器是纯函数。状态也是不可变的，永远不会改变。这使得执行诸如无限撤销和重做之类的艰巨任务成为可能。还可以在之前的状态之间来回移动并实时查看结果</p>
+<h3 id="redux是可维护的">Redux是可维护的</h3>
+<p>Redux的写法比较固定，团队应用中风格比较稳定，提高协作中的可维护性</p>
+<h3 id="redux调试简单">Redux调试简单</h3>
+<p>在控制台中使用Redux Dev Tools</p>
+<h3 id="性能优势">性能优势</h3>
+<p>我们可能会假设保持应用程序的状态全局会导致一些性能下降。在很大程度上，情况并非如此，因为React Redux在内部实现了许多性能优化，因此我们自己的连接组件仅在实际需要时才重新渲染</p>
+<h3 id="易于测试">易于测试</h3>
+<p>由于函数用于更改纯函数的状态，因此测试Redux应用程序很容易</p>
+<h3 id="状态持久化">状态持久化</h3>
+<p>我们可以将应用程序的一些状态持久化到本地存储并在刷新后恢复它。</p>
+<h3 id="服务端渲染">服务端渲染</h3>
+<p>Redux也可以用于服务端渲染。有了它，我们可以通过将应用程序的状态连同它对服务器请求的响应发送到服务器来处理应用程序的初始呈现。然后所需的组件以HTML格式呈现并发送到客户端</p>
+<h2 id="实战项目">实战项目</h2>
+<p>安装redux</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">redux</span> <span class="o">--</span><span class="nx">save</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="redux的简单使用">Redux的简单使用</h3>
+<p>（1）新建store</p>
+<p>（2）获取状态：</p>
+<p>读取：store.getState()即可获取到reducer中的state</p>
+<p>（3）派发事件：</p>
+<p>修改： store.dispatch(action)通过dispatch一个action来出发reducer中的修改行为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createStore</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//1.新建store
+</span></span></span><span class="line"><span class="cl"><span class="c1">//通过reducer建立
+</span></span></span><span class="line"><span class="cl"><span class="c1">//根据老的state和action生成新的state
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">counter</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">,</span> <span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s1">&#39;addGun&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">state</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s1">&#39;removeGun&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">state</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//1. 新建store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">counter</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//2.获取状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">listener</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`现在的个数</span><span class="si">${</span><span class="nx">current</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//每次派发事件之后，都会调用，进而获取状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">store</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//3.派发事件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;addGun&#39;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;addGun&#39;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;removeGun&#39;</span> <span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输出：现在的个数11现在的个数12现在的个数11</p>
+<h3 id="react与redux组合使用">react与redux组合使用</h3>
+<p>安装redux-thunk，解决异步问题</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">redux</span><span class="o">-</span><span class="nx">thunk</span> <span class="o">--</span><span class="nx">save</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>（1）把store.dispatch方法传递给组件，内部可以调用修改状态</p>
+<p>（2）subscribe订阅render函数，每次修改都重新渲染</p>
+<p>（3）redux相关的内容，移动到单独的文件index.redux.js单独管理</p>
+<p>（4）npm install redux-thunk &ndash;save解决异步请求的问题</p>
+<p>（5）使用apply/Middleware开启thunk中间件</p>
+<p><strong>步骤一</strong>：在src下新建App.js、index.redux.js，在index.js中负责页面结构的组建、store的建立</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">ReactDom</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./App&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createStore</span><span class="p">,</span> <span class="nx">applyMiddleware</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">thunk</span> <span class="nx">from</span> <span class="s1">&#39;redux-thunk&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">counter</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./index.redux&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">addGun</span><span class="p">,</span> <span class="nx">removeGun</span><span class="p">,</span> <span class="nx">addGunAsync</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./index.redux&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//applyMiddleware可以使用异步操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">counter</span><span class="p">,</span> <span class="nx">applyMiddleware</span><span class="p">(</span><span class="nx">thunk</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">ReactDom</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span> <span class="o">&lt;</span><span class="nx">App</span> <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span><span class="nx">store</span><span class="p">}</span> <span class="nx">addGun</span> <span class="o">=</span> <span class="p">{</span><span class="nx">addGun</span><span class="p">}</span> <span class="nx">removeGun</span> <span class="o">=</span> <span class="p">{</span><span class="nx">removeGun</span><span class="p">}</span> <span class="nx">addGunAsync</span> <span class="o">=</span> <span class="p">{</span><span class="nx">addGunAsync</span><span class="p">}</span><span class="o">/&gt;</span><span class="p">,</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">render</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//监听状态的变化，每次重新渲染组件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">store</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">render</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>步骤二：在App.js中完成组件内容的编写、页面的渲染以及相关事件的派发</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">App</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">component</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//constructor(props){
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//super(props)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//接收从父组件index.js中传过来的store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">store</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//获取机枪数量状态的变化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kr">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//通过组件传递action，降低耦合度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kr">const</span> <span class="nx">addGun</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">addGun</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">removeGun</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">removeGun</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">addGunAsync</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">addGunAsync</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span> 
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span> 
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span> <span class="nx">现在有机枪</span> <span class="p">{</span> <span class="nx">num</span> <span class="p">}</span> <span class="o">&lt;</span><span class="err">/h2&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span><span class="cm">/* 当点击按钮时执行事件的派发，即调用action */</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()=&gt;</span><span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">addGun</span><span class="p">())}</span><span class="o">&gt;</span><span class="nx">申请武器</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()=&gt;</span><span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">removeGun</span><span class="p">())}</span><span class="o">&gt;</span><span class="nx">回收武器</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()=&gt;</span><span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">addGunAsync</span><span class="p">())}</span><span class="o">&gt;</span><span class="nx">延迟回收武器</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;</span><span class="err">/div &gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>步骤三：index.redux.js中负责的store中对状态变化的处理、action事件的编写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">ADD_GUN</span> <span class="o">=</span> <span class="s1">&#39;addGun&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">REMOVE_GUN</span> <span class="o">=</span> <span class="s1">&#39;removeGun&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">counter</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//当action被调用执行时，会到此处进行判断，执行状态的变化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s1">&#39;addGun&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">state</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s1">&#39;removeGun&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">state</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//action
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">addGun</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">ADD_GUN</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">removeGun</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="nx">REMOVE_GUN</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">addGunAsync</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">dispatch</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">dispatch</span><span class="p">(</span><span class="nx">addGun</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span> <span class="mi">2000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="redux使用的解耦react与redux自动连接">Redux使用的解耦（react与redux自动连接）</h3>
+<p>redux-thunk</p>
+<p>（1）基本介绍</p>
+<ul>
+<li>redux-thunk改写了dispatch API，使其具备<strong>接受一个函数作为参数</strong>的能力，从而达到middleware的效果，即在redux的dispatch action=&gt;reducer=&gt;store这个流程中，在<strong>action被发起之后，到达reducer之前</strong>的扩展点，加入相关操作，比如发生请求、log信息等</li>
+<li>提供Redux的异步解决方案，弥补Redux功能的不足</li>
+</ul>
+<p><img src="/p/redux/image6.png"
+	width="720"
+	height="407"
+	srcset="/p/redux/image6_huda4f98dfb58100d19332aa95b8c3b234_107144_480x0_resize_box_3.png 480w, /p/redux/image6_huda4f98dfb58100d19332aa95b8c3b234_107144_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="176"
+		data-flex-basis="424px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/react/">React</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="js0205/js0205-blog-comments"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 Icy Gao&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
