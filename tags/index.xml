@@ -5,6 +5,39 @@
         <link>https://js0205.github.io/tags/</link>
         <description>Recent content in Tags on Icy Gao&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language><atom:link href="https://js0205.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 30 Nov 2022 23:28:05 +0800</lastBuildDate><atom:link href="https://js0205.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>JavaScript</title>
+        <link>https://js0205.github.io/tags/javascript/</link>
+        <pubDate>Wed, 30 Nov 2022 23:28:05 +0800</pubDate>
+        
+        <guid>https://js0205.github.io/tags/javascript/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>HTML</title>
+        <link>https://js0205.github.io/tags/html/</link>
+        <pubDate>Tue, 29 Nov 2022 11:17:13 +0800</pubDate>
+        
+        <guid>https://js0205.github.io/tags/html/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>大数据</title>
+        <link>https://js0205.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</link>
+        <pubDate>Tue, 29 Nov 2022 11:17:13 +0800</pubDate>
+        
+        <guid>https://js0205.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>性能优化</title>
+        <link>https://js0205.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</link>
+        <pubDate>Tue, 29 Nov 2022 11:17:13 +0800</pubDate>
+        
+        <guid>https://js0205.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</guid>
+        <description></description>
+        </item>
+        
     </channel>
 </rss>

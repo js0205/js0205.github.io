@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>大数据 on Icy Gao&#39;s Blog</title>
+        <link>https://js0205.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</link>
+        <description>Recent content in 大数据 on Icy Gao&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Tue, 29 Nov 2022 11:17:13 +0800</lastBuildDate><atom:link href="https://js0205.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>大数据性能优化之Web Workers</title>
+        <link>https://js0205.github.io/p/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8Bweb-workers/</link>
+        <pubDate>Tue, 29 Nov 2022 11:17:13 +0800</pubDate>
+        
+        <guid>https://js0205.github.io/p/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8Bweb-workers/</guid>
+        <description>&lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
+&lt;p&gt;（1）通过使用Web Workers，Web应用程序可以在独立于主线程的后台线程中，运行一个脚本操作。这样做的好处是可以在独立线程中执行费时的处理任务，从而允许主线程（通常是UI线程）不会因此被阻塞/放慢&lt;/p&gt;
+&lt;p&gt;（2）js有了多线程能力。js是单线程，虽然提供了异步的方案，但本质上还是单线程运行，webworkers让js有了多线程的能力，但是使用起来还是有部分限制&lt;/p&gt;
+&lt;h2 id=&#34;使用注意点&#34;&gt;使用注意点&lt;/h2&gt;
+&lt;p&gt;Web Worker有以下几个使用注意点：&lt;/p&gt;
+&lt;p&gt;（1）同源限制：分配给Worker线程运行的脚本文件，必须与主线程的脚本文件同源&lt;/p&gt;
+&lt;p&gt;（2）DOM限制：Worker线程所在的全局对象，与主线程不一样，无法读取主线程所在网页的DOM对象，也无法使用document、window、parent这些对象。但是，Worker线程可以navigator对象和location对象&lt;/p&gt;
+&lt;p&gt;（3）通信联系：Worker线程和主线程不在同一个上下文环境，它们不能直接通信，必须通过消息完成&lt;/p&gt;
+&lt;p&gt;（4）脚本限制：Worker线程不能执行alert()方法和confirm()方法，但可以使用XMLHttpRequest对象发出AJAX请求&lt;/p&gt;
+&lt;p&gt;（5）文件限制：Worker线程无法读取本地文件，即不能打开本机的文件系统（file://），它所加载的脚本，必须来自网络&lt;/p&gt;
+&lt;h2 id=&#34;基本用法&#34;&gt;基本用法&lt;/h2&gt;
+&lt;h2 id=&#34;数据通信&#34;&gt;数据通信&lt;/h2&gt;
+&lt;p&gt;（1）主线程与Worker之间的通信内容，可以是文本，也可以是对象。需要注意的是，&lt;strong&gt;这种通信是拷贝关系，即是传值不是传址&lt;/strong&gt;，Worker对通信内容的修改，不会影响到主线程。事实上，浏览器内部的运行机制，先将通信内容串行化，然后把串行化后的字符串发给Worker，后者再将它还原。&lt;/p&gt;
+&lt;p&gt;（2）主线程与Worker之间也可以交换二进制数据，例如：File、Blob、ArrayBuffer等类型，也可以在线程之间发送&lt;/p&gt;
+&lt;h2 id=&#34;实战场景&#34;&gt;实战场景&lt;/h2&gt;
+&lt;h2 id=&#34;参考网址&#34;&gt;参考网址&lt;/h2&gt;
+&lt;p&gt;[1] &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a class=&#34;link&#34; href=&#34;https://www.ruanyifeng.com/blog/2018/07/web-worker.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.ruanyifeng.com/blog/2018/07/web-worker.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a class=&#34;link&#34; href=&#34;https://www.freecodecamp.org/chinese/news/general-introduction-to-web-worker/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.freecodecamp.org/chinese/news/general-introduction-to-web-worker/&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
