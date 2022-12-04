@@ -25,6 +25,17 @@ setTimeout的回调函数放到宏任务队列里，等到执行栈清空以后�
 （2）Promise
 Promise本身是同步的立即执行函数，当在exector中执行resolve或者reject的时候，此时是异步操作，会先执行then/catch等，等主栈完成后，才会去调用resolve/reject中存放的方法执行
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 console.log(&amp;#39;script start&amp;#39;); let promise1 = new Promise(function(resolve) { console.log(&amp;#39;promise1&amp;#39;); resolve(); console.log(&amp;#39;promise1 end&amp;#39;); }).then(function() { console.log(&amp;#39;promise2&amp;#39;); }) setTimeout(function() { console.log(&amp;#39;settimeout&amp;#39;); }) console.log(&amp;#39;script end&amp;#39;); //输出顺序：script start -&amp;gt; promise1 -&amp;gt; promise1 end -&amp;gt; script end -&amp;gt; promise2 //-&amp;gt; settimeout 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 console.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YLJBGXPR5"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3YLJBGXPR5', { 'anonymize_ip': false });
+}
+</script>
+
     </head>
     <body class="
     article-page
@@ -68,7 +79,7 @@ Promise本身是同步的立即执行函数，当在exector中执行resolve或�
                     
                     
                         
-                        <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x0_resize_box_3.png" width="300"
+                        <img src="/img/avatar_hu9f960d4fec099d14813837895f20d642_46055_300x0_resize_q75_box.jpg" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 

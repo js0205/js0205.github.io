@@ -30,24 +30,28 @@
 &lt;p&gt;（2）除了主线程之外，还存在一个&lt;strong&gt;任务队列&lt;/strong&gt;，只要异步任务有了运行结果，就在任务队列中植入一个时间标记&lt;/p&gt;
 &lt;p&gt;（3）主线程完成所有任务（&lt;strong&gt;执行栈清空&lt;/strong&gt;），就会读取&lt;strong&gt;任务队列&lt;/strong&gt;、Event Loop把微任务队列执行清空&lt;/p&gt;
 &lt;p&gt;（4）&lt;strong&gt;微任务队列&lt;/strong&gt;清空后，进入&lt;strong&gt;宏任务队列&lt;/strong&gt;的第一项任务放入Stack（栈）中执行，执行完成后，查看微任务队列是否有任务，有的话，清空&lt;strong&gt;微任务队列&lt;/strong&gt;。重复4，继续从宏任务中取任务执行，执行完成之后，继续清空微任务，如此反复循环，直至清空所有的任务&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2022/png/2207879/1669821957673-5af49377-d5ec-4e1d-80e4-f088c61d4a69.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://js0205.github.io/p/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/image1.png&#34;
+	width=&#34;741&#34;
+	height=&#34;385&#34;
+	srcset=&#34;https://js0205.github.io/p/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/image1_hu26f686ca456c3c4c8f6f8edebad8f8fe_151598_480x0_resize_box_3.png 480w, https://js0205.github.io/p/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/image1_hu26f686ca456c3c4c8f6f8edebad8f8fe_151598_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
 	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;192&#34;
+		data-flex-basis=&#34;461px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2022/png/2207879/1669821963899-9c443a1e-8846-4f32-abc6-b58f9eff4aa7.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://js0205.github.io/p/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/image2.png&#34;
+	width=&#34;793&#34;
+	height=&#34;515&#34;
+	srcset=&#34;https://js0205.github.io/p/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/image2_hu14e341aec3250ffc3114217b685cd519_286624_480x0_resize_box_3.png 480w, https://js0205.github.io/p/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/image2_hu14e341aec3250ffc3114217b685cd519_286624_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
 	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;153&#34;
+		data-flex-basis=&#34;369px&#34;
 	
 &gt;&lt;/p&gt;
 </description>
@@ -281,15 +285,18 @@
 &lt;h2 id=&#34;ajax工作原理xmlhttprequest对象&#34;&gt;Ajax工作原理——XMLHttpRequest对象&lt;/h2&gt;
 &lt;p&gt;（1）Ajax不是新的编程语言，而是一门提供网页局部刷新的技术。&lt;/p&gt;
 &lt;p&gt;Ajax最大的优点是在&lt;strong&gt;不重新加载整个页面&lt;/strong&gt;的情况下，&lt;strong&gt;与服务器交换数据&lt;/strong&gt;并&lt;strong&gt;更新部分网页&lt;/strong&gt;内容&lt;/p&gt;
-&lt;p&gt;流程图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2022/png/2207879/1669809898064-b2482f39-2a86-4d69-b177-80f540dcb7d2.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://js0205.github.io/p/ajax/image1.png&#34;
+	width=&#34;765&#34;
+	height=&#34;415&#34;
+	srcset=&#34;https://js0205.github.io/p/ajax/image1_hu5b1975de207732fb6c6772e210ccdac0_200026_480x0_resize_box_3.png 480w, https://js0205.github.io/p/ajax/image1_hu5b1975de207732fb6c6772e210ccdac0_200026_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
+		alt=&#34;流程图&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;184&#34;
+		data-flex-basis=&#34;442px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -502,27 +509,31 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;原型&#34;&gt;原型&lt;/h2&gt;
 &lt;p&gt;在JavaScript中，每当定义一个函数数据类型（普通函数、类）时候，都会天生自带一个prototype属性，这个属性指向函数的&lt;strong&gt;原型对象&lt;/strong&gt;，并且这个属性是一个对象数据类型的值&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2022/png/2207879/1669784454230-38d116cc-abc4-4787-aa7a-ac86430b552d.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://js0205.github.io/p/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/image1.png&#34;
+	width=&#34;602&#34;
+	height=&#34;134&#34;
+	srcset=&#34;https://js0205.github.io/p/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/image1_hu82a1a46f5db0d1da93dd2396b2052b74_28578_480x0_resize_box_3.png 480w, https://js0205.github.io/p/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/image1_hu82a1a46f5db0d1da93dd2396b2052b74_28578_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
 	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;449&#34;
+		data-flex-basis=&#34;1078px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;原型链&#34;&gt;原型链&lt;/h2&gt;
 &lt;p&gt;（1）proto和constructor&lt;/p&gt;
 &lt;p&gt;每一个对象数据类型（普通的对象、实例、prototype&amp;hellip;..）也天生自带一个属性__proto__，属性值是当前实例所属类的原型（prototype）。原型对象中有一个属性constructor，它指向函数对象。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2022/png/2207879/1669784639627-c69e5939-75ae-4a93-b40c-2915c0ae3c91.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://js0205.github.io/p/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/image2.png&#34;
+	width=&#34;583&#34;
+	height=&#34;250&#34;
+	srcset=&#34;https://js0205.github.io/p/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/image2_hu720bf887cb2a30b67e01ef007010be9d_37697_480x0_resize_box_3.png 480w, https://js0205.github.io/p/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/image2_hu720bf887cb2a30b67e01ef007010be9d_37697_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
 	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;233&#34;
+		data-flex-basis=&#34;559px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -547,14 +558,16 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;(2)什么是原型链？&lt;/p&gt;
 &lt;p&gt;当我们在访问对象的一个属性或方法时，它会先在对象自身中寻找，如果有则直接使用，如果没有则会去&lt;strong&gt;原型对象中寻找&lt;/strong&gt;，如果找到则直接使用。如果没有则取原型的原型中寻找，直到找到Object对象的原型，Object对象的原型没有原型，如果在Object原型中依然没有找到，则返回undefined&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2022/png/2207879/1669785530870-6f1067e0-e08e-4f3d-a55a-9cb0290b3f19.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://js0205.github.io/p/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/image3.png&#34;
+	width=&#34;510&#34;
+	height=&#34;452&#34;
+	srcset=&#34;https://js0205.github.io/p/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/image3_hu997c90711b12893e4a51e20b906c49dc_62107_480x0_resize_box_3.png 480w, https://js0205.github.io/p/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/image3_hu997c90711b12893e4a51e20b906c49dc_62107_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
 	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;112&#34;
+		data-flex-basis=&#34;270px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;原型链总结&#34;&gt;原型链总结&lt;/h2&gt;
