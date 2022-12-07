@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://js0205.github.io/categories/</loc>
-    <lastmod>2022-12-04T20:08:23+08:00</lastmod>
+    <lastmod>2022-12-07T13:05:46+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -21,7 +21,7 @@
                 />
   </url><url>
     <loc>https://js0205.github.io/</loc>
-    <lastmod>2022-12-04T20:08:23+08:00</lastmod>
+    <lastmod>2022-12-07T13:05:46+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -39,19 +39,19 @@
                 />
   </url><url>
     <loc>https://js0205.github.io/post/</loc>
-    <lastmod>2022-12-04T20:08:23+08:00</lastmod>
+    <lastmod>2022-12-07T13:05:46+08:00</lastmod>
   </url><url>
-    <loc>https://js0205.github.io/tags/react/</loc>
-    <lastmod>2022-12-04T20:08:23+08:00</lastmod>
+    <loc>https://js0205.github.io/tags/sentry/</loc>
+    <lastmod>2022-12-07T13:05:46+08:00</lastmod>
   </url><url>
-    <loc>https://js0205.github.io/categories/react/</loc>
-    <lastmod>2022-12-04T20:08:23+08:00</lastmod>
+    <loc>https://js0205.github.io/categories/sentry/</loc>
+    <lastmod>2022-12-07T13:05:46+08:00</lastmod>
   </url><url>
-    <loc>https://js0205.github.io/p/redux/</loc>
-    <lastmod>2022-12-04T20:08:23+08:00</lastmod>
+    <loc>https://js0205.github.io/p/sentry/</loc>
+    <lastmod>2022-12-07T13:05:46+08:00</lastmod>
   </url><url>
     <loc>https://js0205.github.io/tags/</loc>
-    <lastmod>2022-12-04T20:08:23+08:00</lastmod>
+    <lastmod>2022-12-07T13:05:46+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -67,6 +67,21 @@
                 hreflang="zh-cn"
                 href="https://js0205.github.io/tags/"
                 />
+  </url><url>
+    <loc>https://js0205.github.io/tags/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/</loc>
+    <lastmod>2022-12-07T13:05:46+08:00</lastmod>
+  </url><url>
+    <loc>https://js0205.github.io/categories/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/</loc>
+    <lastmod>2022-12-07T13:05:46+08:00</lastmod>
+  </url><url>
+    <loc>https://js0205.github.io/tags/react/</loc>
+    <lastmod>2022-12-04T20:08:23+08:00</lastmod>
+  </url><url>
+    <loc>https://js0205.github.io/categories/react/</loc>
+    <lastmod>2022-12-04T20:08:23+08:00</lastmod>
+  </url><url>
+    <loc>https://js0205.github.io/p/redux/</loc>
+    <lastmod>2022-12-04T20:08:23+08:00</lastmod>
   </url><url>
     <loc>https://js0205.github.io/tags/javascript/</loc>
     <lastmod>2022-11-30T23:28:05+08:00</lastmod>

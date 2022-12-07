@@ -6,7 +6,23 @@
         <description>Recent content in Categories on Icy Gao&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 04 Dec 2022 20:08:23 +0800</lastBuildDate><atom:link href="https://js0205.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 Dec 2022 13:05:46 +0800</lastBuildDate><atom:link href="https://js0205.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Sentry</title>
+        <link>https://js0205.github.io/categories/sentry/</link>
+        <pubDate>Wed, 07 Dec 2022 13:05:46 +0800</pubDate>
+        
+        <guid>https://js0205.github.io/categories/sentry/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>前端性能监控</title>
+        <link>https://js0205.github.io/categories/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/</link>
+        <pubDate>Wed, 07 Dec 2022 13:05:46 +0800</pubDate>
+        
+        <guid>https://js0205.github.io/categories/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>React</title>
         <link>https://js0205.github.io/categories/react/</link>
         <pubDate>Sun, 04 Dec 2022 20:08:23 +0800</pubDate>

@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head>
-	<meta name="generator" content="Hugo 0.106.0"><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='蓦然回首木已成林'>
-<title>Icy Gao&#39;s Blog</title>
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前言 目前问题：工程师在处理线上问题的时候基本来自于工单，工程师只是被动接收客户发现的问题 目前痛点：兼容性问题自测难覆盖、接口报错难复现、问题发现不及时、客户反馈太紧急 技术方案 badjs fundebug Sentry 什么是Sentry Sentry是一个开源的监控系统，可以收集项目中的异常信息，便于开发人员第一时间发现问题，定位问题，解决问题。
+Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持主流的编程语言 支持Sass版和私有化部署 支持多个第三方集成，如gitlab、github、jira、webhook Sentry的架构 前端应用如何接入Sentry 私有化部署 项目接入 钉钉/邮箱报警 参考网址 [1] Sentry官网
+[2] Sentry 官方文档
+[3] Sentry github网址
+[4] 异常监控系统之 Sentry
+[5] 神策数据王朋：如何搭建一套高可用的前端异常监控系统？
+[6] 【得物技术】前端项目使用Sentry错误监控实践
+[7] Sentry Web 前端监控 - 最佳实践(官方教程)
+[8] SourceMap 与前端异常监控'>
+<title>Sentry</title>
 
-<link rel='canonical' href='https://js0205.github.io/'>
+<link rel='canonical' href='https://js0205.github.io/p/sentry/'>
 
-<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='Icy Gao&#39;s Blog'>
-<meta property='og:description' content='蓦然回首木已成林'>
-<meta property='og:url' content='https://js0205.github.io/'>
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='Sentry'>
+<meta property='og:description' content='前言 目前问题：工程师在处理线上问题的时候基本来自于工单，工程师只是被动接收客户发现的问题 目前痛点：兼容性问题自测难覆盖、接口报错难复现、问题发现不及时、客户反馈太紧急 技术方案 badjs fundebug Sentry 什么是Sentry Sentry是一个开源的监控系统，可以收集项目中的异常信息，便于开发人员第一时间发现问题，定位问题，解决问题。
+Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持主流的编程语言 支持Sass版和私有化部署 支持多个第三方集成，如gitlab、github、jira、webhook Sentry的架构 前端应用如何接入Sentry 私有化部署 项目接入 钉钉/邮箱报警 参考网址 [1] Sentry官网
+[2] Sentry 官方文档
+[3] Sentry github网址
+[4] 异常监控系统之 Sentry
+[5] 神策数据王朋：如何搭建一套高可用的前端异常监控系统？
+[6] 【得物技术】前端项目使用Sentry错误监控实践
+[7] Sentry Web 前端监控 - 最佳实践(官方教程)
+[8] SourceMap 与前端异常监控'>
+<meta property='og:url' content='https://js0205.github.io/p/sentry/'>
 <meta property='og:site_name' content='Icy Gao&#39;s Blog'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2022-12-07T13:05:46&#43;08:00 '/>
-<meta name="twitter:title" content="Icy Gao&#39;s Blog">
-<meta name="twitter:description" content="蓦然回首木已成林"><link rel="alternate" type="application/rss&#43;xml" href="https://js0205.github.io/index.xml">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='前端性能监控' /><meta property='article:tag' content='Sentry' /><meta property='article:published_time' content='2022-12-07T13:05:46&#43;08:00'/><meta property='article:modified_time' content='2022-12-07T13:05:46&#43;08:00'/>
+<meta name="twitter:title" content="Sentry">
+<meta name="twitter:description" content="前言 目前问题：工程师在处理线上问题的时候基本来自于工单，工程师只是被动接收客户发现的问题 目前痛点：兼容性问题自测难覆盖、接口报错难复现、问题发现不及时、客户反馈太紧急 技术方案 badjs fundebug Sentry 什么是Sentry Sentry是一个开源的监控系统，可以收集项目中的异常信息，便于开发人员第一时间发现问题，定位问题，解决问题。
+Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持主流的编程语言 支持Sass版和私有化部署 支持多个第三方集成，如gitlab、github、jira、webhook Sentry的架构 前端应用如何接入Sentry 私有化部署 项目接入 钉钉/邮箱报警 参考网址 [1] Sentry官网
+[2] Sentry 官方文档
+[3] Sentry github网址
+[4] 异常监控系统之 Sentry
+[5] 神策数据王朋：如何搭建一套高可用的前端异常监控系统？
+[6] 【得物技术】前端项目使用Sentry错误监控实践
+[7] Sentry Web 前端监控 - 最佳实践(官方教程)
+[8] SourceMap 与前端异常监控">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YLJBGXPR5"></script>
 <script>
 var doNotTrack = false;
@@ -26,7 +49,9 @@ if (!doNotTrack) {
 </script>
 
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -299,120 +324,10 @@ if (!doNotTrack) {
     </ol>
 </aside>
 
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-            
-        
-            
-                
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-    </div>
-    <h2 class="widget-title section-title">分类</h2>
-
-    <div class="tagCloud-tags">
-        
-            <a href="/categories/javascript/" class="font_size_8">
-                JavaScript
-            </a>
-        
-            <a href="/categories/html/" class="font_size_1">
-                HTML
-            </a>
-        
-            <a href="/categories/react/" class="font_size_1">
-                React
-            </a>
-        
-            <a href="/categories/sentry/" class="font_size_1">
-                Sentry
-            </a>
-        
-            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" class="font_size_1">
-                前端性能监控
-            </a>
-        
-    </div>
-</section>
-
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
-
-
-
-    </div>
-    <h2 class="widget-title section-title">标签云</h2>
-
-    <div class="tagCloud-tags">
-        
-            <a href="/tags/javascript/" class="font_size_8">
-                JavaScript
-            </a>
-        
-            <a href="/tags/html/" class="font_size_1">
-                HTML
-            </a>
-        
-            <a href="/tags/react/" class="font_size_1">
-                React
-            </a>
-        
-            <a href="/tags/sentry/" class="font_size_1">
-                Sentry
-            </a>
-        
-            <a href="/tags/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" class="font_size_1">
-                前端性能监控
-            </a>
-        
-            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="font_size_1">
-                大数据
-            </a>
-        
-            <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="font_size_1">
-                性能优化
-            </a>
-        
-    </div>
-</section>
-            
-        
-    </aside>
-
+    
 
             <main class="main full-width">
-    
-    
-    
-    
-
-    <section class="article-list">
-        
-            
-<article class="">
+    <article class="main-article">
     <header class="article-header">
 
     <div class="article-details">
@@ -480,297 +395,135 @@ if (!doNotTrack) {
 </div>
 
 </header>
-</article>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言</h2>
+<ol>
+<li>目前问题：工程师在处理线上问题的时候基本来自于工单，工程师只是被动接收客户发现的问题</li>
+<li>目前痛点：兼容性问题自测难覆盖、接口报错难复现、问题发现不及时、客户反馈太紧急</li>
+</ol>
+<h2 id="技术方案">技术方案</h2>
+<ul>
+<li>badjs</li>
+<li>fundebug</li>
+<li>Sentry</li>
+</ul>
+<h2 id="什么是sentry">什么是Sentry</h2>
+<p>Sentry是一个开源的监控系统，可以收集项目中的异常信息，便于开发人员第一时间发现问题，定位问题，解决问题。</p>
+<h2 id="sentry的特点">Sentry的特点</h2>
+<ul>
+<li>100%开源：源码开放，性能卓越，易于扩展</li>
+<li>支持主流的编程语言</li>
+<li>支持Sass版和私有化部署</li>
+<li>支持多个第三方集成，如gitlab、github、jira、webhook</li>
+</ul>
+<h2 id="sentry的架构">Sentry的架构</h2>
+<h2 id="前端应用如何接入sentry">前端应用如何接入Sentry</h2>
+<h3 id="私有化部署">私有化部署</h3>
+<h3 id="项目接入">项目接入</h3>
+<h3 id="钉钉邮箱报警">钉钉/邮箱报警</h3>
+<h2 id="参考网址">参考网址</h2>
+<p>[1] <a class="link" href="https://sentry.io/welcome/"  target="_blank" rel="noopener"
+    >Sentry官网</a></p>
+<p>[2] <a class="link" href="https://docs.sentry.io/"  target="_blank" rel="noopener"
+    >Sentry 官方文档</a></p>
+<p>[3] <a class="link" href="https://github.com/getsentry/sentry"  target="_blank" rel="noopener"
+    >Sentry github网址</a></p>
+<p>[4] <a class="link" href="https://ludd.link/blog/monitor/sentry.html"  target="_blank" rel="noopener"
+    >异常监控系统之 Sentry</a></p>
+<p>[5] <a class="link" href="https://zhuanlan.zhihu.com/p/381930994"  target="_blank" rel="noopener"
+    >神策数据王朋：如何搭建一套高可用的前端异常监控系统？</a></p>
+<p>[6] <a class="link" href="https://juejin.cn/post/6954303116783124487"  target="_blank" rel="noopener"
+    >【得物技术】前端项目使用Sentry错误监控实践</a></p>
+<p>[7]  <a class="link" href="https://cloud.tencent.com/developer/article/1887800"  target="_blank" rel="noopener"
+    >Sentry Web 前端监控 - 最佳实践(官方教程)</a></p>
+<p>[8] <a class="link" href="https://jishuin.proginn.com/p/763bfbd5e203"  target="_blank" rel="noopener"
+    >SourceMap 与前端异常监控</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
         
-            
-<article class="">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
+            <a href="/tags/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/">前端性能监控</a>
         
-            <a href="/categories/react/" >
-                React
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/redux/">Redux</a>
-        </h2>
-    
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">Dec 04, 2022</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 3 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
-            
-<article class="">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/javascript/" >
-                JavaScript
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a>
-        </h2>
-    
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">Nov 30, 2022</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 1 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
-            
-<article class="">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/javascript/" >
-                JavaScript
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96/">数组扁平化</a>
-        </h2>
-    
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">Nov 30, 2022</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 1 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
-            
-<article class="">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/javascript/" >
-                JavaScript
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/call-bind-apply%E4%B8%89%E8%80%85%E7%9A%84%E5%BC%82%E5%90%8C/">call bind apply三者的异同</a>
-        </h2>
-    
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">Nov 30, 2022</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 1 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
+            <a href="/tags/sentry/">Sentry</a>
         
     </section>
-    <nav class='pagination'>
-        
-        
 
-        
-            
-                <span class='page-link current'>1</span>
-                
-            
-            
-                    <a class='page-link' href='/page/2/'>2</a>
-                
-            
-            
-                    <a class='page-link' href='/page/3/'>3</a>
-                
-            
-    </nav>
 
-<footer class="site-footer">
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="js0205/js0205-blog-comments"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
     <section class="copyright">
         &copy; 
         
@@ -784,6 +537,85 @@ if (!doNotTrack) {
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
 
             </main>
         </div>

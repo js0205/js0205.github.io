@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Sentry on Icy Gao&#39;s Blog</title>
+        <link>https://js0205.github.io/tags/sentry/</link>
+        <description>Recent content in Sentry on Icy Gao&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 07 Dec 2022 13:05:46 +0800</lastBuildDate><atom:link href="https://js0205.github.io/tags/sentry/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Sentry</title>
+        <link>https://js0205.github.io/p/sentry/</link>
+        <pubDate>Wed, 07 Dec 2022 13:05:46 +0800</pubDate>
+        
+        <guid>https://js0205.github.io/p/sentry/</guid>
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;目前问题：工程师在处理线上问题的时候基本来自于工单，工程师只是被动接收客户发现的问题&lt;/li&gt;
+&lt;li&gt;目前痛点：兼容性问题自测难覆盖、接口报错难复现、问题发现不及时、客户反馈太紧急&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;技术方案&#34;&gt;技术方案&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;badjs&lt;/li&gt;
+&lt;li&gt;fundebug&lt;/li&gt;
+&lt;li&gt;Sentry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;什么是sentry&#34;&gt;什么是Sentry&lt;/h2&gt;
+&lt;p&gt;Sentry是一个开源的监控系统，可以收集项目中的异常信息，便于开发人员第一时间发现问题，定位问题，解决问题。&lt;/p&gt;
+&lt;h2 id=&#34;sentry的特点&#34;&gt;Sentry的特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;100%开源：源码开放，性能卓越，易于扩展&lt;/li&gt;
+&lt;li&gt;支持主流的编程语言&lt;/li&gt;
+&lt;li&gt;支持Sass版和私有化部署&lt;/li&gt;
+&lt;li&gt;支持多个第三方集成，如gitlab、github、jira、webhook&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sentry的架构&#34;&gt;Sentry的架构&lt;/h2&gt;
+&lt;h2 id=&#34;前端应用如何接入sentry&#34;&gt;前端应用如何接入Sentry&lt;/h2&gt;
+&lt;h3 id=&#34;私有化部署&#34;&gt;私有化部署&lt;/h3&gt;
+&lt;h3 id=&#34;项目接入&#34;&gt;项目接入&lt;/h3&gt;
+&lt;h3 id=&#34;钉钉邮箱报警&#34;&gt;钉钉/邮箱报警&lt;/h3&gt;
+&lt;h2 id=&#34;参考网址&#34;&gt;参考网址&lt;/h2&gt;
+&lt;p&gt;[1] &lt;a class=&#34;link&#34; href=&#34;https://sentry.io/welcome/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sentry官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a class=&#34;link&#34; href=&#34;https://docs.sentry.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sentry 官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a class=&#34;link&#34; href=&#34;https://github.com/getsentry/sentry&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sentry github网址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[4] &lt;a class=&#34;link&#34; href=&#34;https://ludd.link/blog/monitor/sentry.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;异常监控系统之 Sentry&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[5] &lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/381930994&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;神策数据王朋：如何搭建一套高可用的前端异常监控系统？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[6] &lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/6954303116783124487&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【得物技术】前端项目使用Sentry错误监控实践&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[7]  &lt;a class=&#34;link&#34; href=&#34;https://cloud.tencent.com/developer/article/1887800&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sentry Web 前端监控 - 最佳实践(官方教程)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[8] &lt;a class=&#34;link&#34; href=&#34;https://jishuin.proginn.com/p/763bfbd5e203&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SourceMap 与前端异常监控&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
