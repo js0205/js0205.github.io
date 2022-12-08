@@ -413,22 +413,16 @@ if (!doNotTrack) {
     <h2 id="前言">前言</h2>
 <p>项目中接触到了mobx，因此记录一下对mobx的使用和理解</p>
 <h2 id="常用api">常用API</h2>
-<ol>
-<li>创建observable</li>
-</ol>
+<h3 id="创建observable">创建observable</h3>
 <p><strong>makeObservable</strong></p>
 <p>用法：makeObservable(target, annotations?, options?)</p>
 <p>属性、整个对象、数组、Maps和Sets都可以被转化成observale</p>
-<ol>
-<li>Actions</li>
-</ol>
+<h3 id="actions">Actions</h3>
 <p>Action就是任何一段修改状态的代码</p>
 <p><strong>runInAction</strong></p>
 <p>用法：runInAction(fn)</p>
 <p>创建一个被立即调用的一次性action</p>
-<ol>
-<li>与React的整合</li>
-</ol>
+<h3 id="与react的整合">与React的整合</h3>
 <p>来自mobx-react或mobx-react-lite包</p>
 <p><strong>observer</strong></p>
 <p>用法：observer(component)</p>
