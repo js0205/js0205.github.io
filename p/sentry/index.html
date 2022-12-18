@@ -2,7 +2,7 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前言 目前问题：工程师在处理线上问题的时候基本来自于工单，工程师只是被动接收客户发现的问题 目前痛点：兼容性问题自测难覆盖、接口报错难复现、问题发现不及时、客户反馈太紧急 技术方案 badjs fundebug Sentry 什么是Sentry Sentry是一个开源的监控系统，可以收集项目中的异常信息，便于开发人员第一时间发现问题，定位问题，解决问题。
-Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持主流的编程语言 支持Sass版和私有化部署 支持多个第三方集成，如gitlab、github、jira、webhook Sentry的架构 前端应用如何接入Sentry 私有化部署 项目接入 钉钉/邮箱报警 参考网址 [1] Sentry官网
+Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持主流的编程语言 支持Sass版和私有化部署 支持多个第三方集成，如gitlab、github、jira、webhook Sentry的架构 前端应用如何接入Sentry 私有化部署 项目接入 钉钉/邮箱报警 数据埋点指标 CLS：累积布局偏移 FID：首次输入延迟 FCP：首次内容绘制 LCP：最大内容绘制 TTFB：首字节时间 参考网址 [1] Sentry官网
 [2] Sentry 官方文档
 [3] Sentry github网址
 [4] 异常监控系统之 Sentry
@@ -16,7 +16,7 @@ Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持�
 
 <link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='Sentry'>
 <meta property='og:description' content='前言 目前问题：工程师在处理线上问题的时候基本来自于工单，工程师只是被动接收客户发现的问题 目前痛点：兼容性问题自测难覆盖、接口报错难复现、问题发现不及时、客户反馈太紧急 技术方案 badjs fundebug Sentry 什么是Sentry Sentry是一个开源的监控系统，可以收集项目中的异常信息，便于开发人员第一时间发现问题，定位问题，解决问题。
-Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持主流的编程语言 支持Sass版和私有化部署 支持多个第三方集成，如gitlab、github、jira、webhook Sentry的架构 前端应用如何接入Sentry 私有化部署 项目接入 钉钉/邮箱报警 参考网址 [1] Sentry官网
+Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持主流的编程语言 支持Sass版和私有化部署 支持多个第三方集成，如gitlab、github、jira、webhook Sentry的架构 前端应用如何接入Sentry 私有化部署 项目接入 钉钉/邮箱报警 数据埋点指标 CLS：累积布局偏移 FID：首次输入延迟 FCP：首次内容绘制 LCP：最大内容绘制 TTFB：首字节时间 参考网址 [1] Sentry官网
 [2] Sentry 官方文档
 [3] Sentry github网址
 [4] 异常监控系统之 Sentry
@@ -29,7 +29,7 @@ Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持�
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='前端性能监控' /><meta property='article:tag' content='Sentry' /><meta property='article:published_time' content='2022-12-07T13:05:46&#43;08:00'/><meta property='article:modified_time' content='2022-12-07T13:05:46&#43;08:00'/>
 <meta name="twitter:title" content="Sentry">
 <meta name="twitter:description" content="前言 目前问题：工程师在处理线上问题的时候基本来自于工单，工程师只是被动接收客户发现的问题 目前痛点：兼容性问题自测难覆盖、接口报错难复现、问题发现不及时、客户反馈太紧急 技术方案 badjs fundebug Sentry 什么是Sentry Sentry是一个开源的监控系统，可以收集项目中的异常信息，便于开发人员第一时间发现问题，定位问题，解决问题。
-Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持主流的编程语言 支持Sass版和私有化部署 支持多个第三方集成，如gitlab、github、jira、webhook Sentry的架构 前端应用如何接入Sentry 私有化部署 项目接入 钉钉/邮箱报警 参考网址 [1] Sentry官网
+Sentry的特点 100%开源：源码开放，性能卓越，易于扩展 支持主流的编程语言 支持Sass版和私有化部署 支持多个第三方集成，如gitlab、github、jira、webhook Sentry的架构 前端应用如何接入Sentry 私有化部署 项目接入 钉钉/邮箱报警 数据埋点指标 CLS：累积布局偏移 FID：首次输入延迟 FCP：首次内容绘制 LCP：最大内容绘制 TTFB：首字节时间 参考网址 [1] Sentry官网
 [2] Sentry 官方文档
 [3] Sentry github网址
 [4] 异常监控系统之 Sentry
@@ -424,6 +424,14 @@ if (!doNotTrack) {
 <h3 id="私有化部署">私有化部署</h3>
 <h3 id="项目接入">项目接入</h3>
 <h3 id="钉钉邮箱报警">钉钉/邮箱报警</h3>
+<h2 id="数据埋点指标">数据埋点指标</h2>
+<ul>
+<li>CLS：累积布局偏移</li>
+<li>FID：首次输入延迟</li>
+<li>FCP：首次内容绘制</li>
+<li>LCP：最大内容绘制</li>
+<li>TTFB：首字节时间</li>
+</ul>
 <h2 id="参考网址">参考网址</h2>
 <p>[1] <a class="link" href="https://sentry.io/welcome/"  target="_blank" rel="noopener"
     >Sentry官网</a></p>

@@ -82,6 +82,14 @@
 &lt;h3 id=&#34;私有化部署&#34;&gt;私有化部署&lt;/h3&gt;
 &lt;h3 id=&#34;项目接入&#34;&gt;项目接入&lt;/h3&gt;
 &lt;h3 id=&#34;钉钉邮箱报警&#34;&gt;钉钉/邮箱报警&lt;/h3&gt;
+&lt;h2 id=&#34;数据埋点指标&#34;&gt;数据埋点指标&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CLS：累积布局偏移&lt;/li&gt;
+&lt;li&gt;FID：首次输入延迟&lt;/li&gt;
+&lt;li&gt;FCP：首次内容绘制&lt;/li&gt;
+&lt;li&gt;LCP：最大内容绘制&lt;/li&gt;
+&lt;li&gt;TTFB：首字节时间&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;参考网址&#34;&gt;参考网址&lt;/h2&gt;
 &lt;p&gt;[1] &lt;a class=&#34;link&#34; href=&#34;https://sentry.io/welcome/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Sentry官网&lt;/a&gt;&lt;/p&gt;
